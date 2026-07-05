@@ -1,0 +1,21 @@
+main:
+  - [status]
+  - [services]
+  - [settings]
+
+status:
+  - [widget__check_uptime]
+  - [widget__check_hardware]
+  - [widget__check_network]
+  - [main]
+
+services:
+  {% for service in services %}
+  - [widget__{{ service }}]
+  {% endfor %}
+  - [main]
+
+settings:
+  - [widget__locales]
+  - [widget__reboot]
+  - [main]

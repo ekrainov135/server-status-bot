@@ -1,0 +1,35 @@
+widget__locales:
+  class: app.bot.widgets.SwitchLocale
+  value: {{ lang }}
+  langs: [ru, en]
+
+widget__check_uptime:
+  class: app.bot.widgets.CommandExecWidget
+  label_key: check_uptime
+  value: uptime
+  show_alert: True
+
+widget__check_network:
+  class: app.bot.widgets.CommandExecWidget
+  label_key: check_network
+  value: status_summary
+  name: network
+  show_alert: True
+
+widget__check_hardware:
+  class: app.bot.widgets.CommandExecWidget
+  label_key: check_hardware
+  value: status_summary
+  name: hardware
+  show_alert: True
+
+widget__reboot:
+  class: app.bot.widgets.CommandExecWidget
+  label_key: reboot
+  value: reboot
+
+{% for service in services %}
+widget__{{ service }}:
+  class: app.bot.widgets.ServiceManager
+  name: {{ service }}
+{% endfor %}

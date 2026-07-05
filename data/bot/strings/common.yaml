@@ -1,0 +1,13 @@
+main: '←'
+status: 'ℹ️'
+services: '🛠'
+settings: '⚙️'
+
+reboot: '❗'
+
+ru: '🌐'
+en: '🌐'
+
+start: '▶️'
+restart: '🔄'
+stop: '⏹️'

@@ -1,0 +1,11 @@
+main: 'Главная'
+status: 'Статус'
+services: 'Сервисы'
+settings: 'Настройки'
+
+check_uptime: 'Время работы'
+check_network: 'Сеть'
+check_hardware: 'Железо'
+reboot: 'Перезагрузить'
+
+en: 'Английский'

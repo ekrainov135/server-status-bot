@@ -1,0 +1,74 @@
+[project]
+name = "server-status-bot"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "aiogram==3.29.0",
+    "python-dotenv==1.2.2",
+    "psutil==7.2.2",
+    "pydantic==2.13.4",
+    "PyYAML==6.0.3",
+    "Jinja2==3.1.6",
+]
+
+[tool.setuptools]
+packages = ["app", "lib"]
+
+[project.optional-dependencies]
+dev = [
+    "pre_commit==4.6.0",
+    "pre-commit-hooks==6.0.0",
+    "ruff==0.15.20",
+    "mypy==2.1.0",
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+src = ["app", "lib"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes (unused imports/vars, undefined names — поймал бы баг с `handlers`)
+    "W",   # pycodestyle warnings
+    "I",   # isort (порядок импортов)
+    "UP",  # pyupgrade (современный синтаксис под target-version)
+    "B",   # flake8-bugbear (частые логические ошибки, в т.ч. подозрительные сравнения)
+    "SIM", # flake8-simplify
+    "N",   # pep8-naming
+]
+ignore = [
+    "E501", # длина строки — уже ограничена line-length, но не блокируем локально длинные YAML-строки
+]
+
+[tool.ruff.lint.per-file-ignores]
+"data/bot/configs/*" = ["ALL"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "lib"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.mypy]
+python_version = "3.14"
+files = ["app", "lib"]
+explicit_package_bases = true
+ignore_missing_imports = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_optional = true
+strict_equality = true
+

@@ -1,0 +1,11 @@
+main: 'Main'
+status: 'Status'
+services: 'Services'
+settings: 'Settings'
+
+check_uptime: 'Uptime'
+check_network: 'Network'
+check_hardware: 'Hardware'
+reboot: 'Reboot'
+
+ru: 'Russian'

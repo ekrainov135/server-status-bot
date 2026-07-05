@@ -1,0 +1,28 @@
+network:
+  ping_hosts:
+    - 8.8.8.8
+    - 1.1.1.1
+    - google.com
+    - cloudflare.com
+    - youtube.com
+    - github.com
+    - stackoverflow.com
+    - telegram.org
+  dns_servers:
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 9.9.9.9
+    - 208.67.222.222
+
+sh:
+  is_service_exists: 'systemctl cat {name} >/dev/null 2>&1 && echo "ok"'
+  is_service_active: 'systemctl is-active --quiet {name} && echo "ok"'
+  is_service_enabled: 'systemctl is-enabled --quiet {name} && echo "ok"'
+  get_default_interface_linux: 'ip route get 1.1.1.1'
+  get_default_interface_macos: 'route -n get default'
+  get_ping_status: 'ping -c 1 -W 1 {address}'
+  reboot: 'reboot now'
+  service_start: 'systemctl start {name}'
+  service_restart: 'systemctl restart {name}'
+  service_stop: 'systemctl stop {name}'
