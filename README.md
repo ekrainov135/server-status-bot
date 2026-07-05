@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.14%2B-blue)
 [![CI](https://github.com/ekrainov135/server-status-bot/actions/workflows/ci.yaml/badge.svg)](https://github.com/ekrainov135/server-status-bot/actions/workflows/ci.yaml)
 [![Ruff](https://img.shields.io/badge/lint-ruff-46a2f1.svg)](https://github.com/astral-sh/ruff)
-![GitHub License](https://img.shields.io/github/license/ekrainov135/server-status-bot)
+![License](https://img.shields.io/github/license/ekrainov135/server-status-bot?label=license)
 
 ## Description
 
